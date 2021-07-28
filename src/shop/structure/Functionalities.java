@@ -7,7 +7,7 @@ public interface Functionalities {
 
 	void startDayOfWork();
 
-	void addCustomer();
+	void addCustomer() throws Exception;
 
 	CustomerWaitingStatus generateWaitingStatus(); // cannot have private abstract methods in versions before java 9
 

@@ -1,5 +1,6 @@
 package shop.constants;
 
 public class GenericConstants {
-	public static final int NUMBER_OF_BARBERS = 1;
+	public static final String GENERIC_EXCEPTION = "Something went wrong...";
+	public static final String NO_BARBER_EXCEPTION = "No barber available.";
 }

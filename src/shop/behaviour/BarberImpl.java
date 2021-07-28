@@ -10,9 +10,11 @@ public class BarberImpl implements Barber {
 	private BarberStatus status;
 
 	@Override
-	public void doHairCut(Customer customer) {
+	public void doServe(Customer customer) {
 		try {
-			Thread.sleep(ConfigConstants.HAIRCUT_TIME); // different type of service may take different amout of time
+			Thread.sleep(ConfigConstants.SERVICE_DURATIONS.get(customer.getServiceType())); // different type of service
+																							// may take different amout
+																							// of time
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

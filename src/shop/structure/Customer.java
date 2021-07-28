@@ -1,6 +1,7 @@
 package shop.structure;
 
 import shop.constants.CustomerWaitingStatus;
+import shop.constants.ServiceType;
 
 public interface Customer {
 //	int customerId; // ID can be used to identify each customer
@@ -9,5 +10,9 @@ public interface Customer {
 	CustomerWaitingStatus getWaitingStatus();
 
 	void setWaitingStatus(CustomerWaitingStatus customerWaitingStatus);
+
+	ServiceType getServiceType();
+
+	void setServiceType(ServiceType serviceType);
 
 }

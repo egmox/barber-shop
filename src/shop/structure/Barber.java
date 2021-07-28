@@ -9,16 +9,16 @@ public interface Barber {
 //	private int barberId; // in case new barbers joins the shop
 //	private int clientId; // in case we need to associate specific clientID to barber
 
-	default void startHairCut(LinkedList<CustomerImpl> customers) {
+	default void startServe(LinkedList<CustomerImpl> customers) {
 		Customer customer;
 		while (customers.size() > 0) {
 			customer = customers.getFirst();
 			customers.removeFirst();
-			doHairCut(customer);
+			doServe(customer);
 		}
 	}
 
-	public void doHairCut(Customer customer);
+	public void doServe(Customer customer);
 
 	public BarberStatus getStatus();
 

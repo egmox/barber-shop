@@ -1,13 +1,15 @@
 package shop.behaviour;
 
 import shop.constants.CustomerWaitingStatus;
+import shop.constants.ServiceType;
 import shop.structure.Customer;
 
 public class CustomerImpl implements Customer {
 
 	private CustomerWaitingStatus waitingStatus;
-	
-	public CustomerImpl(CustomerWaitingStatus waitingStatus) {
+	private ServiceType serviceType;
+
+	public CustomerImpl(CustomerWaitingStatus waitingStatus, ServiceType serviceType) {
 		this.waitingStatus = waitingStatus;
 	}
 
@@ -19,6 +21,16 @@ public class CustomerImpl implements Customer {
 	@Override
 	public void setWaitingStatus(CustomerWaitingStatus customerWaitingStatus) {
 		this.waitingStatus = customerWaitingStatus;
+	}
+
+	@Override
+	public ServiceType getServiceType() {
+		return this.serviceType;
+	}
+
+	@Override
+	public void setServiceType(ServiceType serviceType) {
+		this.serviceType = serviceType;
 	}
 
 }
