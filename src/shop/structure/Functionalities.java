@@ -5,9 +5,7 @@ import shop.constants.CustomerWaitingStatus;
 
 public interface Functionalities {
 
-	void startDayOfWork();
-
-	void addCustomer() throws Exception;
+	void addCustomer(int numberOfCustomers) throws Exception;
 
 	CustomerWaitingStatus generateWaitingStatus(); // cannot have private abstract methods in versions before java 9
 

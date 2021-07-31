@@ -15,11 +15,17 @@ public class BarberImpl implements Barber {
 			Thread.sleep(ConfigConstants.SERVICE_DURATIONS.get(customer.getServiceType())); // different type of service
 																							// may take different amout
 																							// of time
+			System.out.println("1 customer served.");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public BarberImpl() {
+		this.status = BarberStatus.SLEEPING;
+	}
 
+	
 	@Override
 	public BarberStatus getStatus() {
 		return status;

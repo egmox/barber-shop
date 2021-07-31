@@ -1,21 +1,20 @@
 package shop.structure;
 
-import java.util.LinkedList;
-
-import shop.behaviour.CustomerImpl;
+import shop.BarberShop;
 import shop.constants.BarberStatus;
 
 public interface Barber {
 //	private int barberId; // in case new barbers joins the shop
 //	private int clientId; // in case we need to associate specific clientID to barber
 
-	default void startServe(LinkedList<CustomerImpl> customers) {
-		Customer customer;
-		while (customers.size() > 0) {
-			customer = customers.getFirst();
-			customers.removeFirst();
-			doServe(customer);
+	default void startServe() {
+		while (BarberShop.customers.size() > 0) {
+			doServe(getNextCustomer());
 		}
+	}
+
+	default Customer getNextCustomer() {
+		return BarberShop.customers.pollFirst(); // different method for dynamically prioritize customers
 	}
 
 	public void doServe(Customer customer);

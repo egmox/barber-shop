@@ -11,6 +11,7 @@ public class CustomerImpl implements Customer {
 
 	public CustomerImpl(CustomerWaitingStatus waitingStatus, ServiceType serviceType) {
 		this.waitingStatus = waitingStatus;
+		this.serviceType = serviceType;
 	}
 
 	@Override
